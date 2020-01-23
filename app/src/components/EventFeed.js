@@ -8,7 +8,7 @@ const EventFeed = props => {
     const { events, error, startDate, endDate, flight_number } = props;
 
     useEffect(() => {
-        fetchEvents(startDate, endDate, flight_number);
+        props.fetchEvents(startDate, endDate, flight_number);
     }, []);
 
     return (
@@ -31,4 +31,4 @@ const mapStateToProps = state => {
     };
 };
 
-export default connect(mapStateToProps, {})(EventFeed);
+export default connect(mapStateToProps, { fetchEvents })(EventFeed);
