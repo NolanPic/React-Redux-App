@@ -2,6 +2,7 @@ const initialState = {
     events: [],
     startDate: '',
     endDate: '',
+    flight_number: null,
     error: null
 };
 
