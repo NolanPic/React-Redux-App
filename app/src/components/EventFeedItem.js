@@ -2,12 +2,12 @@ import React from 'react';
 
 const EventFeedItem = props => {
 
-    const { id, title, details, flight_number, event_date_unix, links } = props.event;
+    const { id, title, details, flight_number, event_date_utc, links } = props.event;
 
     return (
         <div>
             <h2>{title}</h2>
-            <p>{event_date_unix}</p>
+            <p>{new Date(event_date_utc).toLocaleDateString()}</p>
             <p>{flight_number}</p>
             <p>{details}</p>
             {links && links.article && (
