@@ -8,7 +8,7 @@ const EventFeedItem = props => {
         <div>
             <h2>{title}</h2>
             <p>{new Date(event_date_utc).toLocaleDateString()}</p>
-            <p>{flight_number}</p>
+            {flight_number && (<p><strong>Flight #:</strong> {flight_number}</p>)}
             <p>{details}</p>
             {links && links.article && (
                 <a href={links.article} target="_blank">Article &rarr;</a>

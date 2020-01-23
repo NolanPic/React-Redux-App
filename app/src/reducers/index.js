@@ -1,17 +1,11 @@
 import {
     FETCH_EVENTS_START,
     FETCH_EVENTS_SUCCESS,
-    FETCH_EVENTS_ERROR,
-    START_DATE_UPDATE,
-    END_DATE_UPDATE,
-    FLIGHT_NUMBER_UPDATE } from '../actions';
+    FETCH_EVENTS_ERROR } from '../actions';
  
 const initialState = {
     events: [],
     isLoading: false,
-    startDate: '',
-    endDate: '',
-    flight_number: null,
     error: null
 };
 
@@ -34,21 +28,6 @@ export default (state = initialState, action) => {
                 error: action.payload,
                 isLoading: false
             };
-        case START_DATE_UPDATE:
-            return {
-                ...state,
-                startDate: action.payload
-            };
-        case END_DATE_UPDATE:
-            return {
-                ...state,
-                endDate: action.payload
-            };
-        case FLIGHT_NUMBER_UPDATE:
-            return {
-                ...state,
-                flight_number: action.payload
-            }
         default:
             return state;
     }

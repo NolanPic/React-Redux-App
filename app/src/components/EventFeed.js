@@ -34,10 +34,7 @@ const mapStateToProps = state => {
     return {
         events: state.events,
         error: state.error,
-        isLoading: state.isLoading,
-        startDate: state.startDate,
-        endDate: state.endDate,
-        flight_number: state.flight_number
+        isLoading: state.isLoading
     };
 };
 
