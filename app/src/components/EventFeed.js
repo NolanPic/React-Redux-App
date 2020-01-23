@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { fetchEvents } from '../api';
+import { fetchEvents } from '../actions';
 import EventFeedItem from './EventFeedItem';
 
 const EventFeed = props => {
