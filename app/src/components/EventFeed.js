@@ -1,15 +1,23 @@
 import React, { useEffect } from 'react';
-import { connect } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { fetchEvents } from '../actions';
 import EventFeedItem from './EventFeedItem';
 import Loader from 'react-loader-spinner';
 
 const EventFeed = props => {
 
-    const { events, error, isLoading, startDate, endDate, flight_number } = props;
+    const { events, error, isLoading } = useSelector(state => ({
+        events: state.events,
+        error: state.error,
+        isLoading: state.isLoading
+    }));
+
+    const { startDate, endDate, flight_number } = props;
+
+    const dispatch = useDispatch();
 
     useEffect(() => {
-        props.fetchEvents(startDate, endDate, flight_number);
+        dispatch(fetchEvents(startDate, endDate, flight_number));
     }, [startDate, endDate, flight_number]);
 
     return (
@@ -30,12 +38,4 @@ const EventFeed = props => {
     );
 };
 
-const mapStateToProps = state => {
-    return {
-        events: state.events,
-        error: state.error,
-        isLoading: state.isLoading
-    };
-};
-
-export default connect(mapStateToProps, { fetchEvents })(EventFeed);
+export default EventFeed;
