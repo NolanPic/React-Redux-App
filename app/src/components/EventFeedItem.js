@@ -5,7 +5,7 @@ const EventFeedItem = props => {
     const { id, title, details, flight_number, event_date_utc, links } = props.event;
 
     return (
-        <div>
+        <div className="event-feed-item">
             <h2>{title}</h2>
             <p>{new Date(event_date_utc).toLocaleDateString()}</p>
             {flight_number && (<p><strong>Flight #:</strong> {flight_number}</p>)}
