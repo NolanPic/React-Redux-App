@@ -12,6 +12,6 @@ export const fetchEvents = (startDate, endDate, flight_number) => dispatch => {
             dispatch({ type: FETCH_EVENTS_SUCCESS, payload: res.data });
         })
         .catch(err => {
-            dispatch({ type: FETCH_EVENTS_ERROR, payload: err.response });
+            dispatch({ type: FETCH_EVENTS_ERROR, payload: err.message });
         });
 };
