@@ -20,7 +20,7 @@ const EventFeed = props => {
             {isLoading && (
                 <Loader
                     type="ThreeDots"
-                    color="#000"
+                    color="#4f4f4f"
                     height={100}
                     width={100}
                 />
