@@ -16,12 +16,15 @@ function App() {
 
   return (
     <div className="App">
-      <FilterForm updateFormValues={setFormValues} />
-      <EventFeed
-        startDate={formValues.startDate}
-        endDate={formValues.endDate}
-        flight_number={formValues.flight_number}
-      />
+      <div className="spacex-events">
+        <h1>SpaceX Historical Events</h1>
+        <FilterForm updateFormValues={setFormValues} />
+        <EventFeed
+          startDate={formValues.startDate}
+          endDate={formValues.endDate}
+          flight_number={formValues.flight_number}
+        />
+      </div>
     </div>
   );
 }
